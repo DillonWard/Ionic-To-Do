@@ -2,3 +2,16 @@
     font-style: italic;
     color: grey;
 }
+
+.bar{
+    color: black;
+    background-color: white;
+}
+
+.detail{
+    background-color: white;
+}
+
+.back-icon{
+    color:#85B0F9;
+}

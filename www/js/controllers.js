@@ -13,7 +13,6 @@ angular.module('starter.controllers', [])
     function addTask(){
                 
         if($scope.data.newTask === ""){
-            
         }
         
         else{
@@ -31,6 +30,9 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('DetailsCtrl', function($scope, Task){})
-
+.controller('DetailsCtrl', function($scope, $stateParams, Task){
+    $scope.tasks = Task.data;   
+    $scope.tasks = Task.getter($stateParams.taskID);
+ 
+})
 ;

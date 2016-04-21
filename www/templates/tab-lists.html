@@ -1,10 +1,9 @@
 <ion-view view-title="Lists">      
-    <ion-content class="padding"> 
+    <ion-content class=""> 
 
         <div class="bar bar-header"> 
             
-            <div class="h1 title">List of Tasks</div> 
-            <button class="button button-clear button-positive">Edit</button>
+            <div class="bar h1 title">List of Tasks</div> 
         
         </div>      
     
@@ -30,7 +29,7 @@
         
         <ion-list>
         
-            <ion-item ng-repeat="task in tasks.tasks">
+            <ion-item class ="item-icon-right" ng-repeat="task in tasks.tasks" href = "#/tab/lists/{{task.id}}">
             
                 <h3>{{ task.title }}</h3>
                             

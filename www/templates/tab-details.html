@@ -1,11 +1,26 @@
 <ion-view view-title="Lists">      
     <ion-content class="padding"> 
 
-        <div class="bar bar-header"> 
-            
+        <div class=" bar detail"> 
+             <a class="button icon-left ion-chevron-left button-clear button-dark" href = "#/tab/lists">Back</a>
+
             <div class="h1 title">Task Details</div> 
-            <button class="button button-clear button-positive">Edit</button>
-        
+         
         </div>      
+        
+        <br>
+        <br>
+        <br>
+        <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">{{tasks.title}}</span>
+    <input type="text" placeholder="Edit entry...">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">{{tasks.detail}}</span>
+    <input type="text" placeholder="Edit entry...">
+  </label>
+</div>
+        
     </ion-content>
 </ion-view>
