@@ -1,0 +1,43 @@
+<ion-view view-title="Lists">      
+    <ion-content class="padding"> 
+
+        <div class="bar bar-header"> 
+            
+            <div class="h1 title">List of Tasks</div> 
+            <button class="button button-clear button-positive">Edit</button>
+        
+        </div>      
+    
+        <br> 
+        <br>
+  
+        
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" ng-model="data.newTask" placeholder="Enter a task here">   
+                
+            </label>
+           <label class="item item-input">
+                <input type="text" ng-model="data.newDetails" placeholder="Task Details">   
+                
+            </label>
+            <div class="list list-inset">
+           
+      <button class="button button-full button-positive" ng-click="addTask()">
+          Submit New Task
+      </button>
+        </div>
+        
+        <ion-list>
+        
+            <ion-item ng-repeat="task in tasks.tasks">
+            
+                <h3>{{ task.title }}</h3>
+                            
+                <h3 class = "dillon">{{ task.detail }}  <h4 class = "dillon"> {{task.added | date: 'dd-MM-yyyy'}} </h4> </h3>
+
+            </ion-item>
+        
+        </ion-list>
+    </ion-content>
+</ion-view>
