@@ -7,8 +7,8 @@ angular.module('starter.services', [])
       tasks: [{
           
           id: 0,
-          title: "Do Dark Souls",
-          detail: "git gud",
+          title: "Shopping",
+          detail: "Milk, Eggs, Bread",
           added: new Date()
           
       }
@@ -34,10 +34,14 @@ angular.module('starter.services', [])
         return null;
     }
     
+    function remove(id){
+      data.tasks.splice(data.tasks.indexOf(id), 1);
+  }
+  
   return {
       data: data, 
       addTask: addTask,
-      getter: getter 
-      
+      getter: getter,
+      remove: remove
   };
 });

@@ -2,7 +2,10 @@ angular.module('starter.controllers', [])
 
 .controller('ListsCtrl', function($scope, Task) {
     $scope.tasks = Task.data;    
-    
+   
+    $scope.remove = function(item){
+        Task.remove(item);
+    };
     
     var data = {
         newTask: "",
@@ -25,7 +28,7 @@ angular.module('starter.controllers', [])
     
     $scope.data = data;
     $scope.addTask = addTask;
-    
+ 
     
 })
 
@@ -33,6 +36,6 @@ angular.module('starter.controllers', [])
 .controller('DetailsCtrl', function($scope, $stateParams, Task){
     $scope.tasks = Task.data;   
     $scope.tasks = Task.getter($stateParams.taskID);
- 
+    
 })
 ;

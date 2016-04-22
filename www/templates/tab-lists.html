@@ -18,7 +18,6 @@
             </label>
            <label class="item item-input">
                 <input type="text" ng-model="data.newDetails" placeholder="Task Details">   
-                
             </label>
             <div class="list list-inset">
            
@@ -29,12 +28,17 @@
         
         <ion-list>
         
-            <ion-item class ="item-icon-right" ng-repeat="task in tasks.tasks" href = "#/tab/lists/{{task.id}}">
+            <ion-item class ="item-remove-animate item-icon-right" ng-repeat="task in tasks.tasks" type="item-text-warp" href = "#/tab/lists/{{task.id}}">
             
                 <h3>{{ task.title }}</h3>
                             
                 <h3 class = "dillon">{{ task.detail }}  <h4 class = "dillon"> {{task.added | date: 'dd-MM-yyyy'}} </h4> </h3>
 
+                <ion-option-button class="button-assertive" ng-click="remove(item)">
+                    Delete
+            </ion-option-button>
+
+                
             </ion-item>
         
         </ion-list>
