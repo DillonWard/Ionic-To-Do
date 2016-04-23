@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
     $scope.tasks = Task.data;    
    // Removes item from list of tasks
     $scope.remove = function(item){
+        // Remove item
         Task.remove(item);
     };
     
@@ -25,6 +26,7 @@ angular.module('starter.controllers', [])
           Task.addTask(data.newTask, data.newDetail)
           
         }
+        // Empty after usage
         $scope.data.newTask = ""; 
         $scope.data.newDetail = ""; 
     }
@@ -47,6 +49,7 @@ angular.module('starter.controllers', [])
         console.log($scope.data);
         Task.editTask($stateParams.taskID, $scope.data.newName, $scope.data.newDetail);
         
+        // Empty after usage
         $scope.data.newName = "";
         $scope.data.newDetail = "";
     }

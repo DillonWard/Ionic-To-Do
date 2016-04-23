@@ -51,7 +51,7 @@ angular.module('starter.services', [])
         }
     }
     
-    return {  
+    return {
         data: data, 
         addTask: addTask,
         getter: getter,
