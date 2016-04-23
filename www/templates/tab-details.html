@@ -13,13 +13,18 @@
         <br>
         <div class="list">
   <label class="item item-input item-stacked-label">
-    <span class="input-label">{{tasks.title}}</span>
-    <input type="text" placeholder="Edit entry...">
+    <span class="input-label">{{tasks.newName}}</span>
+    <input type="text" ng-model= "data.newName" placeholder="Edit entry...">
   </label>
   <label class="item item-input item-stacked-label">
-    <span class="input-label">{{tasks.detail}}</span>
-    <input type="text" placeholder="Edit entry...">
+    <span class="input-label">{{tasks.newDetail}}</span>
+    <input type="text" ng-model= "data.newDetail" placeholder="Edit entry...">
   </label>
+            
+                 
+      <button class="button button-full button-positive" ng-click="editTask()">
+          Save Edit
+      </button>
 </div>
         
     </ion-content>

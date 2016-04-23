@@ -12,8 +12,6 @@ angular.module('starter.services', [])
           added: new Date()
           
       }
-          
-      
     ] 
   }
   
@@ -37,11 +35,24 @@ angular.module('starter.services', [])
     function remove(id){
       data.tasks.splice(data.tasks.indexOf(id), 1);
   }
-  
-  return {
-      data: data, 
-      addTask: addTask,
-      getter: getter,
-      remove: remove
+    
+    function editTask(id, newName, newDetail){
+        
+        for(var i = 0; i < data.tasks.length; i++){
+            if(data.tasks[i].id === parseInt(id)){
+                data.tasks[i].title = newName;
+                data.tasks[i].detail = newDetail;
+            }
+            
+        }
+    }
+    
+    return {  
+        data: data, 
+        addTask: addTask,
+        getter: getter,
+        remove: remove,
+        editTask: editTask 
   };
+
 });

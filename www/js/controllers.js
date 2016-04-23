@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
     
     var data = {
         newTask: "",
-        newDetails: ""
+        newDetail: ""
     };
     
 
@@ -19,11 +19,11 @@ angular.module('starter.controllers', [])
         }
         
         else{
-          Task.addTask(data.newTask, data.newDetails)
+          Task.addTask(data.newTask, data.newDetail)
           
         }
         $scope.data.newTask = ""; 
-        $scope.data.newDetails = ""; 
+        $scope.data.newDetail = ""; 
     }
     
     $scope.data = data;
@@ -34,8 +34,20 @@ angular.module('starter.controllers', [])
 
 
 .controller('DetailsCtrl', function($scope, $stateParams, Task){
-    $scope.tasks = Task.data;   
-    $scope.tasks = Task.getter($stateParams.taskID);
+    $scope.data ={
+        newName: "",
+        newDetail: ""  
+    };
     
+    function editTask(){
+        console.log($scope.data);
+        Task.editTask($stateParams.taskID, $scope.data.newName, $scope.data.newDetail);
+        
+        $scope.data.newName = "";
+        $scope.data.newDetail = "";
+    }
+    $scope.tasks = Task.getter($stateParams.taskID);
+    $scope.editTask = editTask;
+   
 })
 ;
